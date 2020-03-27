@@ -7,22 +7,26 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class SimpleTestSelenium {
-    private WebDriver driver;
     private static String WINDOWS_DRIVER = "/chromedriver/windows/chromedriver.exe";
     private static String MAC_DRIVER = "/chromedriver/mac/chromedriver";
 
     @Test
     public void ShouldOpenBrowser() {
-        setupChromeDriver();
+        WebDriver driver = setupChromeDriver();
         driver.navigate().to("https://www.up.edu.mx/es");
         driver.close();
     }
 
-    private void setupChromeDriver() {
+    @Test
+    public void shouldReturnNumberOfLinks(){
+        /* TODO */
+        /*Add code to obtain the number of links and print to console*/
+
+    }
+    private WebDriver setupChromeDriver() {
         if (System.getProperty("os.name").contains("Mac")) {
             File cDriver = new File(SimpleTestSelenium.class.getResource(MAC_DRIVER).getFile());
 
@@ -44,7 +48,7 @@ public class SimpleTestSelenium {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--start-maximized");
         options.addArguments("--ignore-certificate-errors");
-        driver = new ChromeDriver(options);
+        return new ChromeDriver(options);
     }
 
     private String urlDecode(String value)  {
