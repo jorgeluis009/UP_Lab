@@ -13,10 +13,17 @@ public class SimpleTestSelenium {
     private static String WINDOWS_DRIVER = "/chromedriver/windows/chromedriver.exe";
     private static String MAC_DRIVER = "/chromedriver/mac/chromedriver";
 
-    @Test
+    @Test (groups = {"Basic"})
     public void ShouldOpenBrowser() {
+        // arrange
         WebDriver driver = setupChromeDriver();
+
+        // act
         driver.navigate().to("https://www.up.edu.mx/es");
+
+        // assert
+
+        driver.getTitle()
         driver.close();
     }
 
