@@ -33,6 +33,12 @@ public class SimpleTestSelenium {
         /*Add code to obtain the number of links and print to console*/
 
     }
+
+    @Test
+    public void newTestSample(){
+
+    }
+
     private WebDriver setupChromeDriver() {
         if (System.getProperty("os.name").contains("Mac")) {
             File cDriver = new File(SimpleTestSelenium.class.getResource(MAC_DRIVER).getFile());

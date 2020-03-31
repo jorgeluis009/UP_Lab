@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaTestAutomationUP" />
+        <module name="UP_Lab" />
         <module name="javalab" />
+        <module name="JavaTestAutomationUP" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8" />
